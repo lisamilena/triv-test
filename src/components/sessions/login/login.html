@@ -1,0 +1,29 @@
+<div class="panel login-panel">
+  <div class="panel-heading">
+    <h2 class="title">{{ 'login.title' | translate | uppercase }}</h1>
+  </div>
+  <div class="panel-body">
+    <form ng-submit="vm.login()">
+      <div class="form-group m-b-20">
+        <label>{{ 'general.email' | translate }}</label>
+        <input ng-model="vm.user.email" class="form-control detail-editable" type="text" tabindex="1">
+      </div>
+      <div class="form-group m-b-20">
+        <label>{{ 'general.password' | translate }}
+        </label>
+        <a ui-sref="page.forgotPassword" class="pull-right">{{ 'login.forgotPassword' | translate }}</a>
+        <input ng-model="vm.user.password" class="form-control detail-editable" type="password" tabindex="2">
+      </div>
+      <div class="form-group">
+        <div class="login-submit-button">
+          <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-primary">
+            {{'general.actions.login' | translate}}
+          </button>
+        </div>
+      </div>
+    </form>
+    <p class="text-center">{{ 'login.youDontHaveAnAccountYet' | translate }}
+      <a ui-sref="page.register"> {{ 'login.registerHere' | translate }}</a>
+    </p>
+  </div>
+</div>

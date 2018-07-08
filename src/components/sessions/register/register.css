@@ -1,0 +1,12 @@
+.register-form {
+  width: 500px;
+  max-width: 98%;
+  margin: 30px auto 40px;
+}
+
+.register-label {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size:10px;
+  color:#8a8a8a;
+}

@@ -1,0 +1,46 @@
+<div class="panel login-panel">
+    <form ng-submit="vm.login()">
+      <div>
+        <p class="pull-right">
+          <span>{{ 'register.alreadyHaveAnAccount' | translate }}</span>
+          <a ui-sref="page.login">{{ 'login.title' | translate }}</a>
+        </p>
+        <h2 class="title">{{ 'register.title' | translate | uppercase }}</h2>
+      </div>
+
+      <div class="register-form">
+        <div class="form-group">
+          <detail required='true' label-class='register-label' param="vm.user.name"
+            label="'general.name' | translate" type="'text'" editable="true"></detail>
+        </div>
+        <div class="form-group">
+          <detail required='true' label-class='register-label' param="vm.user.email"
+            label="'general.email' | translate" type="'email'" editable="true"></detail>
+        </div>
+        <div class="form-group">
+          <detail required='true' label-class='register-label' param="vm.user.password"
+            label="'general.password' | translate" type="'password'" editable="true"></detail>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" required ng-model="vm.user.acceptedTermsAndConditions">
+            <p>
+              {{'general.actions.accept' | translate}}
+              <a ui-sref="page.termsAndConditions">
+                {{ 'register.termsAndConditions' | translate }}
+              </a>
+            </p>
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" ng-disabled="registerForm.$invalid" class="btn btn-primary m-r-20">
+          {{'general.actions.register' | translate}}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

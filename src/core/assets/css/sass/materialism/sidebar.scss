@@ -1,0 +1,26 @@
+// Sidenav =================================================================
+
+#sidenav-overlay {
+  position: absolute;
+  left: 0;
+  top: -65px;
+  right: 0;
+  bottom: 0;
+  background-color: color("nav-aside", "overlay");
+  z-index: 1036;
+  will-change: opacity;
+}
+
+.drag-target {
+  height: 100%;
+  width: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 998;
+}
+
+@media only screen and (max-width: 992px) {
+  main, footer {
+    padding-left: 0;
+  }
+}

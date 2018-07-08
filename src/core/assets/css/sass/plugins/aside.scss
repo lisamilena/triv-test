@@ -1,0 +1,48 @@
+.aside {
+  margin-top: 64px;
+  z-index: 1031 !important;
+  padding:0px;
+  overflow: visible !important;
+  @include box-shadow(0px 7px 7px 0 rgba(0, 0, 0, 0.36));
+  border-top: 1px #E3E3E3 solid;
+  height: calc(100% - 64px);
+
+  .close {
+    position: absolute;
+    right: -25px;
+    top: 28px;
+    opacity: 1;
+    z-index: 10;
+  }
+
+  &-dialog {
+    position:relative;
+    height: 100%;
+
+    .aside-body {
+      padding: 40px !important;
+      overflow: scroll;
+      height: 100%;
+
+    }
+  }
+
+  legend {
+    margin-bottom:5px;
+    border: none;
+    padding: 10px 0 0 15px;
+  }
+
+
+  &-backdrop {
+    z-index: 1020 !important;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    right: 0px !important;
+
+    .close {
+      right:25px;
+    }
+  }
+}

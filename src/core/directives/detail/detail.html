@@ -1,0 +1,75 @@
+<div class="col-{{vm.screen || 'xs'}}-{{vm.size}} {{vm.colClass}}">
+
+  <div class="form-group" ng-if="vm.editable && (vm.type === 'text' || vm.type === 'password')">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <input type="{{vm.type}}" name='{{vm.name}}' ng-model="vm.param" class="form-control detail-editable" maxlength="{{vm.length}}"
+        ng-required="{{vm.required}}" autocomplete="{{vm.autocomplete ? 'on' : 'off'}}"/>
+    </p>
+  </div>
+
+  <div class="form-group" ng-if="vm.editable && vm.type === 'email'">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <input type="email" name='{{vm.name}}' ng-model="vm.param" class="form-control detail-editable" maxlength="{{vm.length}}"
+             pattern="[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?"
+             pattern-err-type="email" autocomplete="off" ng-required="{{vm.required}}" name="email" autocomplete="{{vm.autocomplete ? 'on' : 'off'}}"/>
+    </p>
+  </div>
+
+  <div class="form-group" ng-if="vm.editable && vm.type === 'tel'">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <input type="tel" name='{{vm.name}}' ng-model="vm.param" class="form-control detail-editable" maxlength="{{vm.length}}"
+             pattern="^[6789]{1}[0-9]{8}$"
+             pattern-err-type="email" autocomplete="off" ng-required="{{vm.required}}" name="tel" autocomplete="{{vm.autocomplete ? 'on' : 'off'}}"/>
+    </p>
+  </div>
+
+  <div class="form-group" ng-if="vm.editable && vm.type === 'number'">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <input type="number" name='{{vm.name}}' ng-model="vm.param" class="form-control detail-editable" max="{{vm.max}}" min="{{vm.min}}"
+        ng-required="{{vm.required}}" autocomplete="{{vm.autocomplete ? 'on' : 'off'}}"/>
+    </p>
+  </div>
+
+  <div ng-if="!vm.editable">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <span class="form-control disabled">{{(vm.param || ' ')}}</span>
+    </p>
+  </div>
+
+  <div class="form-group" ng-if="vm.editable && vm.type === 'NIF'">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <input type="text" name='{{vm.name}}' ng-model="vm.param" class="form-control detail-editable" maxlength="{{vm.length}}" ng-required="{{vm.required}}"
+        name="NIF" pattern="[a-zA-Z]{0,1}[0-9]{7,8}[a-zA-Z]{1}" pattern-err-type="nif" autocomplete="{{vm.autocomplete ? 'on' : 'off'}}"/>
+    </p>
+  </div>
+
+  <div class="form-group" ng-if="vm.editable && vm.type === 'NSS'">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <input type="text" name='{{vm.name}}' ng-model="vm.param" class="form-control detail-editable" maxlength="{{vm.length}}" ng-required="{{vm.required}}"
+        name="NSS" pattern="[0-9]{12}" pattern-err-type="nss" autocomplete="{{vm.autocomplete ? 'on' : 'off'}}"/>
+    </p>
+  </div>
+
+  <div class="form-group" ng-if="vm.editable && vm.type === 'NTS'">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <input type="text" ng-model="vm.param" class="form-control detail-editable" maxlength="{{vm.length}}" ng-required="{{vm.required}}"
+        name="NTS" pattern="([a-zA-Z]*)([0-9]{12})" pattern-err-type="nts" autocomplete="{{vm.autocomplete ? 'on' : 'off'}}"/>
+    </p>
+  </div>
+
+  <div class="form-group" ng-if="vm.editable && vm.type === 'zip'">
+    <label class="{{ vm.labelClass }}">{{vm.label}}</label>
+    <p class="input-group">
+      <input type="text" ng-model="vm.param" class="form-control detail-editable" ng-required="{{vm.required}}"
+        name="zip" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" pattern-err-type="zip" autocomplete=off/>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@media only screen and (min-width: 992px) {
+  .equal {
+    margin-top: 100px;
+  }
+}
+
+.panel.login-panel {
+  width: 500px;
+  max-width: 96%;
+  margin: 30px auto;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.login-submit-button {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.login-submit-button > button {
+  width: 100%;
+}
