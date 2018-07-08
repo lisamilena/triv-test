@@ -1,11 +1,13 @@
 export default class ForgotPasswordController {
-  constructor($state) {
+  constructor($state, Alerts) {
     this.state = $state;
+    this.Alerts = Alerts;
   }
 
   sendNewPasswordRequest() {
-    console.log(this.user)
+    if(!this.userEmail) return this.Alerts.error('Empty email');
+    this.emailSent = true;
   }
 }
 
-ForgotPasswordController.$inject = ['$state'];
+ForgotPasswordController.$inject = ['$state', 'Alerts'];

@@ -1,0 +1,26 @@
+[
+    {
+        "email": "test1@trivago.es",
+        "password": "123456",
+        "username": "Test 1",
+        "token": "token-test1@trivago.es"
+    },
+    {
+        "email": "test2@trivago.es",
+        "password": "123123",
+        "username": "Test 2",
+        "token": "token-test4@trivago.es"
+    },
+    {
+        "email": "test3@trivago.es",
+        "password": "321654",
+        "username": "Test 3",
+        "token": "token-test4@trivago.es"
+    },
+    {
+        "email": "test4@trivago.es",
+        "password": "654654",
+        "username": "Test 4",
+        "token": "token-test4@trivago.es"
+    }
+]

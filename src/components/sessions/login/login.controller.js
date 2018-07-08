@@ -1,9 +1,9 @@
 export default class LoginController {
-  constructor($state, Alerts, $translate) {
+  constructor($state, $translate, Alerts, Request) {
     this.state = $state;
     this.Alerts = Alerts;
+    this.Request = Request;
     this.translate = $translate;
-    this.loginError = this.loginError.bind(this);
 
     this.user = {
       email: '',
@@ -15,16 +15,27 @@ export default class LoginController {
     }
   }
 
-  login() {
-    if(!this.user.email || !this.user.password) return this.loginError('errors.emptyUserPass');
+  login(user) {
+    if(!user.email || !user.password)
+      return this.Alerts.error(this.translate.instant('errors.emptyUserPass'));
+      
+    const self = this;
+    this.Request.login()
+    .then(function(resp) {
+      const currentUser = resp.data.filter(item => {
+        return item.email === user.email;
+      })[0];
+      console.log(currentUser)
 
-    localStorage.setItem('user', JSON.stringify(this.user));
-    this.state.go('page.hotels');
-  }
-
-  loginError(error) {
-    this.Alerts.error(this.translate.instant((error.status === 401 ? 'errors.incorrectUserPass' : error.statusText)));
+      if(!currentUser || currentUser.password !== user.password)
+        self.Alerts.error(self.translate.instant('errors.incorrectUserPass'));
+      else {
+        localStorage.setItem('authorization', currentUser.token);
+        localStorage.setItem('user', JSON.stringify({ email: currentUser.email, username: currentUser.username}));
+        self.state.go('page.hotels');
+      }
+    });
   }
 }
 
-LoginController.$inject = ['$state', 'Alerts', '$translate'];
+LoginController.$inject = ['$state', '$translate', 'Alerts', 'Request'];

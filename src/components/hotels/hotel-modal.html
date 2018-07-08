@@ -6,7 +6,7 @@
         <h4 class="modal-title bold">{{ vm.selectedHotel.name }}</h4>
       </div>
       <div class="modal-body row">
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-6">
             <div class="bold">Id:</div>
             <p class="p-l-10">
               {{ vm.selectedHotel.id }}
@@ -24,10 +24,10 @@
               <i ng-repeat="i in vm.getNumberRate(vm.selectedHotel.rating) track by $index" class="zmdi zmdi-star"></i>
             </p>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-6">
             <img ng-src="{{vm.selectedHotel.image+'?'+vm.selectedHotel.id}}" alt="{{vm.selectedHotel.name}}" />
           </div>
-          <div class="col-md-12">
+          <div class="col-md-12 col-sm-12">
             <div class="bold">Description:</div>
             <p class="p-l-10">{{ vm.selectedHotel.description }}</p>
           </div>

@@ -26,7 +26,7 @@ module.exports = {
     forgotPassword: "Forgot your password?",
     password: "Password",
     youDontHaveAnAccountYet: "You don't have an account yet?",
-    registerHere: "RegisterHere"
+    registerHere: "Register here"
   },
   register: {
     alreadyHaveAnAccount: "Already have an account?",
@@ -35,21 +35,13 @@ module.exports = {
   },
   errors: {
     general: "Oops, algo ha ido mal",
-    incorrectUserPass: "Usuario o contraseña incorrectos",
-    emptyUserPass: "Usuario y contraseña obligatorios",
-    thisFieldIsRequired: "Este campo es obligatorio"
-  },
-  success: {
-    general: "Cambios guardados correctamente",
-    updateUser: "El usuario \"{{name}}\" se ha guardado correctamente"
+    incorrectUserPass: "Your email or password is incorrect",
+    emptyUserPass: "Your email or password is empty"
   },
   forgotPassword: {
-    title: "Recuperar contraseña",
-    needHelp: "¿Necesita ayuda con la contraseña?",
-    goBackToLogin: "Volver al login",
-    description:
-      "Introduzca el correo electrónico y le ayudaremos a crear una nueva contraseña.",
-    emailSentDescription:
-      "Se ha enviado toda la información para cambiar la contraseña a "
+    title: "Reset your password",
+    goBackToLogin: "Back to login",
+    description: "Request an email to reset your password",
+    emailSentDescription: "All the information to change the password, has been sent to "
   }
 };

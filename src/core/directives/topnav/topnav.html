@@ -1,8 +1,9 @@
 <nav class="navbar navbar-default navbar-fixed-top" ng-class="{scroll: (scroll>10)}">
-  <div class="navbar-header pull-left">
-    Trivago
+  <div class="navbar-header pull-left row" ng-class="{'no-login': !vm.email}">
+    <img src="../../assets/img/logo.png" alt="Trivago" />
   </div>
-  <div class="navbar-header pull-right">
-    Logout
+  <div class="navbar-header pull-right p-10" ng-if="vm.email">
+    <div class="text-right bold">User: {{vm.email}}</div>
+    <div class="text-right"><button class="btn btn-link btn-sm" ng-click="vm.logout()">Logout</button></div>
   </div>
 </nav>
