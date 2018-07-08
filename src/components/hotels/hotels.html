@@ -1,22 +1,24 @@
-<section class="p-15 p-t-80">
-  <div class="table table-full m-b-60">
-    <table class="table table-striped table-full table-full-small table-condensed table-hover">
-      <thead>
-      <th>
-        <td>Active</td>
-        <td>Name</td>
-        <td>Description</td>
-        <td>Rating</td>
-      </th>
-      </thead>
-      <tbody>
-      <tr ng-repeat="item in $data" ng-click="vm.editItem(item)">
-        <td>{{ item.isActive }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.description }}</td>
-        <td>{{ item.rating }}</td>
+<section class="p-15">
+  <table class="table table-striped table-full-small m-b-30">
+    <thead>
+      <tr>
+        <th>{{'general.active' | translate}}</td>
+        <th>{{'general.name' | translate}}</td>
+        <th>{{'general.description' | translate}}</td>
+        <th>{{'general.rating' | translate}}</td>
       </tr>
-    </tbody>
-    </table>
-  </div>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in vm.hotels" ng-click="vm.openItem(item)">
+        <td><i ng-if="item.isActive" class="zmdi zmdi-check"></i></td>
+        <td>{{ item.name }}</td>
+        <td>
+          <div class="description">{{ item.description }}</p>
+        </td>
+        <td class="text-center">
+          <i ng-repeat="i in vm.getNumberRate(item.rating) track by $index" class="zmdi zmdi-star"></i>
+        </td>
+      </tr>
+  </tbody>
+  </table>
 </section>

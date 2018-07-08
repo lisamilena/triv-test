@@ -1,0 +1,37 @@
+<div class="modal text-justify" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="vm.closeModal($hide)">&times;</button>
+        <h4 class="modal-title bold">{{ vm.selectedHotel.name }}</h4>
+      </div>
+      <div class="modal-body row">
+          <div class="col-md-6">
+            <div class="bold">Id:</div>
+            <p class="p-l-10">
+              {{ vm.selectedHotel.id }}
+            </p>
+            <div class="bold">Active:</div>
+            <p class="p-l-10">
+              <i ng-class="vm.selectedHotel.isActive ? 'zmdi-check' : 'zmdi-close'" class="zmdi"></i>
+            </p>
+            <div class="bold">Tags:</div>
+            <p class="p-l-10">
+              <i ng-repeat="tag in vm.selectedHotel.tags"> {{tag}} </i>
+            </p>
+            <div class="bold">Rating:</div>
+            <p class="p-l-10">
+              <i ng-repeat="i in vm.getNumberRate(vm.selectedHotel.rating) track by $index" class="zmdi zmdi-star"></i>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img ng-src="{{vm.selectedHotel.image}}" alt="{{vm.selectedHotel.name}}" />
+          </div>
+          <div class="col-md-12">
+            <div class="bold">Description:</div>
+            <p class="p-l-10">{{ vm.selectedHotel.description }}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

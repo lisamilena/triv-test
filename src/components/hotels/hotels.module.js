@@ -11,7 +11,7 @@ export default angular.module('hotels', [
 function routes($stateProvider) {
 
   $stateProvider
-    .state('app.hotels', {
+    .state('page.hotels', {
       url: '/hotels/',
       title: 'Hotels',
       controller: HotelsController,

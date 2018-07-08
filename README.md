@@ -8,7 +8,11 @@ Todas las dependencias se gestionan a través del fichero package.json
 
 ## [Webpack](https://webpack.js.org/)
 
-Se recomienda hacer un pequeño proyecto de web estática con un fichero js y un fichero css y un index.html y empaquetarlo con webpack para aprender el funcionamiento básico de [webpack](https://webpack.js.org/concepts/).
+Empaquetado con webpack: [webpack](https://webpack.js.org/concepts/).
+
+Run: `$ npm start`
+
+build : `$ npm run build`
 
 ## Desarollo
 

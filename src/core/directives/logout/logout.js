@@ -8,9 +8,7 @@ function logout($rootScope, $state) {
   function link(scope, element, attrs) {
     element.on('click', function (e) {
       e.preventDefault();
-      /*ApplicationUser.logout().$promise.then(function () {
-        $state.go('page.login');
-      });*/
+      localStorage.setItem('user', null);
     });
   }
 }

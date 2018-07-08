@@ -1,4 +1,3 @@
-const appUrl = require("../assets/partials/app.html");
 const pageUrl = require("../assets/partials/page.html");
 
 export default function routes(
@@ -25,11 +24,6 @@ export default function routes(
   });
 
   $stateProvider
-    .state("app", {
-      url: "/app",
-      abstract: true,
-      templateUrl: appUrl
-    })
     .state("page", {
       url: "/page",
       abstract: true,

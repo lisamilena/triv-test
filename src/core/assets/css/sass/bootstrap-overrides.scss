@@ -9,82 +9,56 @@ a {
   }
 }
 
-
-// Page header
-.page-header {
-  margin: 0 0 40px 0;
-  padding: 0;
-  border: none;
-
-  h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 20px;
-    @extend .theme-text;
-
-    i {
-      @extend .grey-text;
-      @extend .lighten-2;
-    }
-  }
-
-  .lead {
-    margin: 0;
-  }
-
-  .actions {
-    @extend .pull-right;
-    margin-right: -10px;
-    margin-top: -10px;
-  }
+// Main content
+.main-content {
+  padding-top: $navbar-height;
 }
 
-// Tables =====================================================================
-
-@mixin table-row-variant($state, $background) {
-  // Exact selectors below required to override `.table-striped` and prevent
-  // inheritance to nested tables.
-  .table > thead > tr,
-  .table > tbody > tr, .table div.tr,
-  .table > tfoot > tr {
-    > td.#{$state},
-    > th.#{$state},
-    &.#{$state} > td,
-    &.#{$state} > th {
-      background-color: $background;
-      color: auto-text-color($background);
-    }
+// Tables
+table.table.table-full-small {
+  thead tr > th {
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
   }
-
-  // Hover states for `.table-hover`
-  // Note: this is not available for cells or rows within `thead` or `tfoot`.
-  .table-hover > tbody > tr, .table-hover div.tr {
-    > td.#{$state}:hover,
-    > th.#{$state}:hover,
-    &.#{$state}:hover > td,
-    &:hover > .#{$state},
-    &.#{$state}:hover > th {
-      background-color: darken($background, 5%);
+  tbody tr {
+    &:hover {
+      cursor: pointer;
+    }
+    td {
+      .description {
+        white-space: nowrap;
+        max-width: 50vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
 
-@include table-row-variant('active', $table-bg-active);
-@include table-row-variant('success', $state-success-bg);
-@include table-row-variant('info', $state-info-bg);
-@include table-row-variant('warning', $state-warning-bg);
-@include table-row-variant('danger', $state-danger-bg);
-
-.table-bordered {
-  border: none; // :D
+// Icons colours
+i.zmdi.zmdi-check {
+  color: color('corporate', 'base');
+  font-size: 25px;
+  line-height: 20px;
+}
+i.zmdi.zmdi-close {
+  color: #c94a38;
+}
+i.zmdi.zmdi-star {
+  color: #f48f00;
 }
 
-.table-striped {
-  > tbody > tr:nth-of-type(even), div.tr:nth-of-type(even) {
-    background-color: $table-bg-accent;
+// Modals
+.modal {
+  .modal-header .close {
+    font-size: 30px;
   }
-  > tbody > tr:nth-of-type(odd), div.tr:nth-of-type(odd) {
-    background-color: transparent;
+  .modal-content img {
+    max-width: 98%;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -159,50 +133,6 @@ input[type=number],
   }
 }
 
-select,
-select.form-control {
-  border: 0;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  padding-left: 0;
-  padding-right: 0\9; // remove padding for < ie9 since default arrow can't be removed
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEVmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaP/QSjAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
-  background-size: 13px;
-  background-repeat: no-repeat;
-  background-position: right center;
-  @include box-shadow(inset 0 -1px 0 #ddd);
-  font-size: 16px;
-  line-height: 1.5;
-
-  &::-ms-expand {
-    display: none;
-  }
-
-  &.input {
-    &-sm {
-      font-size: $font-size-small;
-    }
-
-    &-lg {
-      font-size: $font-size-large;
-    }
-  }
-
-  &:focus {
-    @extend .theme-box-inset;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEUhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISF8S9ewAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
-  }
-
-  &[multiple] {
-    background: none;
-  }
-
-  &[disabled] {
-    opacity: 0.7;
-  }
-}
 
 .radio,
 .radio-inline,
@@ -497,69 +427,3 @@ body .alert {
   }
 }
 
-
-// list group =================================================================
-
-.list-group {
-  margin-bottom: 0px;
-
-  &-item {
-    padding: 15px;
-  }
-
-  &-item-text {
-    color: $gray-light;
-  }
-}
-
-
-// Containers =================================================================
-
-.close {
-  font-size: 34px;
-  font-weight: 300;
-  line-height: 24px;
-  opacity: 0.6;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-
-.well {
-  border-radius: 0;
-  @extend .z-depth-0;
-}
-
-.panel {
-  border: none;
-  @extend .z-depth-0;
-
-  &-title {
-    line-height: 20px;
-  }
-
-  &-heading {
-    border-bottom: none;
-  }
-
-  &-footer {
-    border-top: none;
-  }
-}
-
-.popover {
-  border: none;
-  @include box-shadow(0 1px 4px rgba(0,0,0,.3));
-
-  .popover-title {
-    white-space: nowrap;
-  }
-}
-
-.page-header {
-  .title-row{
-    min-height: 35px !important;
-  }
-}

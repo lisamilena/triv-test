@@ -1,6 +1,5 @@
 export default class LoginController {
   constructor($state, Alerts, $translate) {
-   // this.ApplicationUser = ApplicationUser;
     this.state = $state;
     this.Alerts = Alerts;
     this.translate = $translate;
@@ -19,16 +18,8 @@ export default class LoginController {
   login() {
     if(!this.user.email || !this.user.password) return this.loginError('errors.emptyUserPass');
 
-    console.log(this.user)
-    this.state.go('app.hotels');
-
-   /* this.ApplicationUser.login(this.params, this.user)
-    .$promise
-    .then(session => {
-      localStorage.setItem('user', JSON.stringify(session.user));
-      this.goToApp();
-    })
-    .catch(this.loginError);*/
+    localStorage.setItem('user', JSON.stringify(this.user));
+    this.state.go('page.hotels');
   }
 
   loginError(error) {
