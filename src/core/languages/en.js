@@ -9,6 +9,10 @@ module.exports = {
     active: "Active",
     description: "Description",
     rating: "Rating",
+    filters: "Filters",
+    onlyActive: "only active",
+    tags: "Tags",
+    user: "User",
     actions: {
       save: "Save",
       register: "Register me",

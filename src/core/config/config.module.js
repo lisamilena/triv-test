@@ -9,6 +9,5 @@ export default angular.module('config', [])
   .config(translations)
   .config(interceptor)
   .run(stateChange)
-  .constant('NODE_ENV', process.env.NODE_ENV)
   .constant('API_URL', process.env.API_URL)
   .name;

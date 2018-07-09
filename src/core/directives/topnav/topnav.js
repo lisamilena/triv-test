@@ -14,7 +14,7 @@ function topnavController($state, $rootScope) {
   const vm = this;
 
   const setUser = user => {
-    vm.email = (user ? user.email : null);
+    vm.user = (user ? user.username : null);
   };
 
   vm.logout = () => {

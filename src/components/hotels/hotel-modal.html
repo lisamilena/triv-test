@@ -11,15 +11,15 @@
             <p class="p-l-10">
               {{ vm.selectedHotel.id }}
             </p>
-            <div class="bold">Active:</div>
+            <div class="bold">{{'general.active' | translate}}:</div>
             <p class="p-l-10">
               <i ng-class="vm.selectedHotel.isActive ? 'zmdi-check' : 'zmdi-close'" class="zmdi"></i>
             </p>
-            <div class="bold">Tags:</div>
+            <div class="bold">{{'general.tags' | translate}}:</div>
             <p class="p-l-10">
               <i ng-repeat="tag in vm.selectedHotel.tags"> {{tag}} </i>
             </p>
-            <div class="bold">Rating:</div>
+            <div class="bold">{{'general.rating' | translate}}:</div>
             <p class="p-l-10">
               <i ng-repeat="i in vm.getNumberRate(vm.selectedHotel.rating) track by $index" class="zmdi zmdi-star"></i>
             </p>
@@ -28,7 +28,7 @@
             <img ng-src="{{vm.selectedHotel.image+'?'+vm.selectedHotel.id}}" alt="{{vm.selectedHotel.name}}" />
           </div>
           <div class="col-md-12 col-sm-12">
-            <div class="bold">Description:</div>
+            <div class="bold">{{'general.description' | translate}}:</div>
             <p class="p-l-10">{{ vm.selectedHotel.description }}</p>
           </div>
       </div>

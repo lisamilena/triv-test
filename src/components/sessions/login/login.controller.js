@@ -25,7 +25,6 @@ export default class LoginController {
       const currentUser = resp.data.filter(item => {
         return item.email === user.email;
       })[0];
-      console.log(currentUser)
 
       if(!currentUser || currentUser.password !== user.password)
         self.Alerts.error(self.translate.instant('errors.incorrectUserPass'));

@@ -72,82 +72,9 @@ i.zmdi.zmdi-star {
   }
 }
 
-// Forms ======================================================================
-
-.form-group {
-  position:relative;
-}
-
-label {
-  font-weight: normal;
-}
-
-textarea {
-  min-height: 150px;
-}
-span.form-control {
-  border: 1px solid #CCC !important;
-  background: #F3F3F3;
-  cursor: not-allowed;
-
-  &.disabled {
-    opacity: 0.7;
-  }
-}
-
-textarea,
-textarea.form-control,
-input.form-control,
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=number],
-[type=text].form-control,
-[type=password].form-control,
-[type=email].form-control,
-[type=tel].form-control,
-[contenteditable].form-control {
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  -webkit-appearance: none;
-  @include box-shadow(inset 0 -1px 0 #ddd);
-  font-size: 16px;
-
-  &:focus {
-    @extend .theme-box-inset;
-  }
-
-  &[disabled],
-  &[readonly] {
-    @include box-shadow(none);
-    border-bottom: 1px dotted #ddd;
-  }
-
-  &[disabled] {
-    opacity: 0.7;
-  }
-
-  &.input {
-    &-sm {
-      font-size: $font-size-small;
-    }
-
-    &-lg {
-      font-size: $font-size-large;
-    }
-  }
-
-  &.no-resize {
-    resize: none;
-  }
-}
-
-
+// Forms
 .radio,
-.radio-inline,
-.checkbox,
-.checkbox-inline {
+.checkbox {
   label {
     padding-left: 33px;
     margin-bottom: 5px;
@@ -156,81 +83,13 @@ input[type=number],
   }
 }
 
-
-.radio-inline, .checkbox-inline {
-  padding: 0 20px 0 0;
-}
-
-input[type="radio"],
-.radio input[type="radio"],
-.radio-inline input[type="radio"] {
-  margin-top: 5px;
-  margin-left: -33px;
-  border: none;
-  background-color: transparent;
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-
-  &:before,
-  &:after {
-    content: "";
-    display: block;
-    width: 25px;
-    height: 25px;
-    margin-top: -5px;
-    border-radius: 50%;
-    @include transition(240ms);
-  }
-
-  &:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    @include scale(0);
-    @extend .theme-bg;
-  }
-
-  &:after {
-    border: 2px solid $gray;
-  }
-
-  &:checked:before {
-    @include scale(0.5);
-  }
-
-  &:disabled:checked:before {
-    background-color: $gray-light;
-  }
-
-  &:checked:after {
-    @extend .theme-border;
-  }
-
-  &:disabled:after,
-  &:disabled:checked:after {
-    border-color: $gray-light;
-  }
-}
-
-
 label input[type="checkbox"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
+.checkbox input[type="checkbox"] {
   margin-left: -33px;
-}
-
-label input[type="checkbox"] {
-  position:inherit;
 }
 
 input[type="checkbox"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
+.checkbox input[type="checkbox"] {
   border: none;
   -webkit-appearance: none;
   appearance: none;
@@ -281,73 +140,8 @@ input[type="checkbox"],
     border-color: transparent;
   }
 }
-.checkbox-inline {
-  padding: 0 10px;
-  label {
-    margin-bottom:0px;
-  }
-}
 
-.has-warning {
-  input:not([type=checkbox]),
-  .form-control {
-    @include box-shadow(inset 0 -1px 0 $brand-warning);
-  }
-  input:not([type=checkbox]):focus,
-  .form-control:focus {
-    @include box-shadow(inset 0 -2px 0 $brand-warning);
-  }
-}
-
-.has-error {
-  input:not([type=checkbox]),
-  .form-control {
-    @include box-shadow(inset 0 -1px 0 $brand-danger);
-  }
-
-  input:not([type=checkbox]):focus,
-  .form-control:focus {
-    @include box-shadow(inset 0 -2px 0 $brand-danger);
-  }
-
-  .checkbox {
-    padding-bottom: 30px;
-    .error-msg {
-      position: absolute;
-      top: 25px;
-      left: 0px;
-    }
-  }
-}
-
-.has-success {
-  input:not([type=checkbox]),
-  .form-control {
-    @include box-shadow(inset 0 -1px 0 $brand-success);
-  }
-  input:not([type=checkbox]):focus,
-  .form-control:focus {
-    @include box-shadow(inset 0 -2px 0 $brand-success);
-  }
-}
-
-
-.input-group-addon {
-  padding: $padding-base-vertical $padding-base-horizontal+4 $padding-base-vertical $padding-base-horizontal;
-
-  i {
-    font-size:22px;
-  }
-}
-
-.input-group {
-  .form-control {
-    /*margin-left: -$padding-base-vertical;*/
-  }
-}
-
-// Nav =======================================================================
-
+// Nav
 .navbar-default {
   box-shadow: 0 1px 4px rgba(41,51,57,.5);
   .navbar-header {
@@ -381,8 +175,7 @@ input[type="checkbox"],
   }
 }
 
-// Indicators =================================================================
-
+// Indicators
 body .alert {
     border: none;
     color: #fff;

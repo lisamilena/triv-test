@@ -6,10 +6,10 @@
         "token": "token-test1@trivago.es"
     },
     {
-        "email": "test2@trivago.es",
+        "email": "test2@trivago.com",
         "password": "123123",
         "username": "Test 2",
-        "token": "token-test4@trivago.es"
+        "token": "token-test4@trivago.com"
     },
     {
         "email": "test3@trivago.es",
@@ -18,9 +18,9 @@
         "token": "token-test4@trivago.es"
     },
     {
-        "email": "test4@trivago.es",
+        "email": "test4@trivago.com",
         "password": "654654",
         "username": "Test 4",
-        "token": "token-test4@trivago.es"
+        "token": "token-test4@trivago.com"
     }
 ]

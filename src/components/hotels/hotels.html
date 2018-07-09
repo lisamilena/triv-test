@@ -1,6 +1,6 @@
 <section class="p-15">
   <div class="row m-b-15 filters">
-    <div class="col-md-12 text-center bold">Filters:</div>
+    <div class="col-md-12 text-center bold">{{'general.filters' | translate}}:</div>
     <div class="col-md-4 col-sm-4">
       <input type="text" placeholder="Seach by name" ng-model="vm.filters.search" ng-change="vm.filterHotels()"/>
     </div>
@@ -12,7 +12,7 @@
       <label>
         <input type="checkbox" ng-model="vm.filters.active" ng-change="vm.filterHotels()">
         <p>
-          only active
+          {{'general.onlyActive' | translate}}
         </p>
       </label>
     </div>
