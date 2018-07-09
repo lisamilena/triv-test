@@ -1,4 +1,4 @@
-## Instalación
+## Installation
 
 All dependencies are managed through package.json file:
 
@@ -16,7 +16,7 @@ Packaging with webpack: [webpack](https://webpack.js.org/concepts/).
 
 * Watch: `$ npm run watch`
 
-## Desarollo
+## Development
 
 Repository:
 
