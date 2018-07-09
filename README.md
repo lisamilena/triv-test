@@ -1,26 +1,26 @@
 ## Instalación
 
-Todas las dependencias se gestionan a través del fichero package.json
+All dependencies are managed through package.json file:
 
-`$ npm install`
+* `$ npm install`
 
-`$ npm start`
+* `$ npm start`
 
-## [Webpack](https://webpack.js.org/)
+## Webpack
 
-Empaquetado con webpack: [webpack](https://webpack.js.org/concepts/).
+Packaging with webpack: [webpack](https://webpack.js.org/concepts/).
 
-Run: `$ npm start`
+* Run: `$ npm start`
 
-Build: `$ npm run build`
+* Build: `$ npm run build`
 
-Watch: `$ npm run watch`
+* Watch: `$ npm run watch`
 
 ## Desarollo
 
-Repositorio:
+Repository:
 
-`$ git clone https://github.com/lisamilena/triv-test.git`
+* `$ git clone https://github.com/lisamilena/triv-test.git`
 
 ## Users to test
 
